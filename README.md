@@ -2,6 +2,10 @@
 
 这是一个基于 Python 的聊天 AI 项目。
 
+## 运行环境
+
+- 本地运行环境为 Python 3.10
+
 ## 目录结构
 
 - `main.py`：主程序入口
@@ -15,7 +19,7 @@
 
 1. 安装依赖：
    ```powershell
-   pip install -r requirements.txt
+   pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
    ```
 2. 运行项目：
    ```powershell
