@@ -1,0 +1,39 @@
+豆瓣词云 https://github.com/RonnieFu/Douban-movie-review-crawl-word-cloud
+
+一个全栈开发者的个人博客 https://hectorguo.com/en/projects/
+
+后期可以做个：点击反馈没找到，投诉建议（暂无评分，点击反馈）
+
+豆瓣的采集地址：https://movie.douban.com/j/new_search_subjects?sort=T&tags=&start=13
+
+注册成为开发者：https://chrome.google.com/webstore/devconsole/register
+chrome官方文档 https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world?hl=zh-cn
+
+学习容器部署：https://edu.aliyun.com/trainingcamp/3510700?spm=a2cwt.28190922.J_8130813160.5.99017127AbpCHS
+
+兼zhi
+http://lzseeker.com/ 
+http://www.feimalv.com/index.html
+
+前端工具网站
+https://mp.weixin.qq.com/s/EFStW7AP0mWMxHTX6Ttf-A
+netty
+https://www.cnblogs.com/warrenwt/p/18155613
+模型
+https://github.com/BRL-CAD/brlcad
+禅道参考：
+https://zhuanlan.zhihu.com/p/335405276
+https问题解决
+https://blog.csdn.net/Sundp1111/article/details/123818029
+
+
+免费图床
+https://www.bilibili.com/video/BV13N411z7Lu
+
+excel博客
+https://blog.csdn.net/qq991658923/article/details/128153012
+
+
+
+
+
