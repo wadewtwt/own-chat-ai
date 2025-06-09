@@ -50,7 +50,7 @@ embeddings = OllamaEmbeddings(model="qwen:7b-chat")
 
 
 # 初始化知识库（首次运行或更新文档时调用）
-@app.get("/api/knowledge/init")
+@app.get("/knowledgeInit")
 async def initialize_knowledge_base(docs_folder: str):
     try:
         vectordb = init_vector_db(docs_folder)
@@ -63,28 +63,24 @@ async def initialize_knowledge_base(docs_folder: str):
 def init_vector_db(docs_folder: str):
     if not os.path.exists(docs_folder):
         raise FileNotFoundError(f"指定的文件夹不存在: {docs_folder}")
-    
     # 检查chroma_db文件夹是否存在，如果不存在则创建
     chroma_db_path = "./chroma_db"
     if not os.path.exists(chroma_db_path):
         os.makedirs(chroma_db_path)
-  
     loader = DirectoryLoader(
         docs_folder,
         glob="**/*.txt",
         loader_cls=lambda path: TextLoader(path, encoding="utf-8")
     )
     documents = loader.load()
-    
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
     texts = text_splitter.split_documents(documents)
-    
     vectordb = Chroma.from_documents(
         documents=texts,
         embedding=embeddings,
         persist_directory=chroma_db_path
     )
-    vectordb.persist()
+    # Chroma 新版不再需要 persist 方法，直接返回 vectordb
     return vectordb
 
 @app.get("/", response_class=HTMLResponse)

@@ -46,7 +46,8 @@
 ## 本地知识库相关接口说明
 
 1. 初始化向量数据库请求：
-   http://127.0.0.1:8000/api/knowledge/init?docs_folder=origin_data
+   http://127.0.0.1:8000/knowledgeInit?docs_folder=origin_data
+   - 也可通过网页右上角“更新数据库源”按钮进行初始化。
 2. 聊天接口：
    - 普通对话请求地址：/chat
    - 使用本地向量数据库进行查询请求地址：/chatWithKnowledge

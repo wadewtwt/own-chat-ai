@@ -78,7 +78,10 @@
 </head>
 <body>
     <div class="chat-container">
-        <h1>AI 聊天助手</h1>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h1>AI 聊天助手</h1>
+            <button id="update-db-btn" style="padding: 8px 16px; background-color: #4caf50; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14px;">更新数据库源</button>
+        </div>
         <div class="chat-box" id="chat-box"></div>
         <div class="typing-indicator" id="typing-indicator">AI正在思考...</div>
         <div class="input-container">
@@ -177,6 +180,28 @@
             }
         }
 
+        // 更新数据库源按钮事件
+        document.getElementById('update-db-btn').onclick = async function() {
+            const docsFolder = prompt('请输入数据源文件夹名（如 origin_data）：', 'origin_data');
+            if (!docsFolder) return;
+            this.disabled = true;
+            this.textContent = '正在更新...';
+            try {
+                const resp = await fetch(`/knowledgeInit?docs_folder=${encodeURIComponent(docsFolder)}`);
+                const data = await resp.json();
+                if (resp.ok) {
+                    alert(data.message || '数据库更新成功！');
+                } else {
+                    alert(data.detail || '数据库更新失败！');
+                }
+            } catch (e) {
+                alert('请求失败，请检查服务端日志');
+            } finally {
+                this.disabled = false;
+                this.textContent = '更新数据库源';
+            }
+        };
+
         // 事件监听器
         sendButton.addEventListener('click', sendMessage);
         userInput.addEventListener('keypress', (e) => {
@@ -187,4 +212,4 @@
         });
     </script>
 </body>
-</html> 
+</html>
