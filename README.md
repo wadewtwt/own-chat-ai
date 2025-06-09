@@ -1,7 +1,7 @@
 # own-chat-ai
 
 这是一个基于 Python 的聊天 AI 项目。
-
+![alt text](image.png)
 ## 运行环境
 
 - 本地运行环境为 Python 3.10
