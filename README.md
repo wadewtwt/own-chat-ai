@@ -43,6 +43,14 @@
    找到占用 8000 端口的 PID。
 2. 打开任务管理器，找到对应 PID 的进程，结束该进程即可释放端口。
 
+## 本地知识库相关接口说明
+
+1. 初始化向量数据库请求：
+   http://127.0.0.1:8000/api/knowledge/init?docs_folder=origin_data
+2. 聊天接口：
+   - 普通对话请求地址：/chat
+   - 使用本地向量数据库进行查询请求地址：/chatWithKnowledge
+
 ## 许可证
 
 MIT License
